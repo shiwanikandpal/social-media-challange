@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Social links profile</title>
+
+  <style>
+    /* Google Fonts Link */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color--primary: rgb(197, 248, 42); /* primary color */
+      --color-bg-color-off-black: rgb(20, 20, 20); /* body-bg color */
+      --color-bg-card: rgb(31, 31, 31); /* card color*/
+      --color-button-gray: rgb(51, 51, 51); /* button color */
+      --color-white: rgb(255, 255, 255); /* link & title color*/
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-bg-color-off-black);
+    }
+
+    .card {
+      width: 30%;
+      height: 75%;
+      background-color: var(--color-bg-card);
+      border-radius: 10px;
+    }
+
+    .card .card-img {
+      width: 100%;
+      height: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-img img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .card .card-title {
+      width: 100%;
+      height: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-title h2 {
+      font-family: "Inter", sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      color: var(--color-white);
+      text-transform: capitalize;
+    }
+
+    .card-title p {
+      font-family: "Inter", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      text-align: center;
+      color: var(--color--primary);
+      text-transform: capitalize;
+    }
+
+    .card .card-description {
+      width: 100%;
+      height: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-description p {
+      font-family: "Inter", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      text-align: center;
+      color: var(--color-white);
+      text-transform: capitalize;
+    }
+
+    .card .card-buttons {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+
+    .card-buttons .btn {
+      flex: 1;
+      width: 80%;
+      margin-bottom: 15px;
+      background-color: var(--color-button-gray);
+      border-radius: 8px;
+      padding: 5px;
+      color: var(--color-white);
+      font-family: "Inter", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
+
+    .btn.active {
+      background-color: var(--color--primary);
+      color: var(--color-bg-color-off-black);
+      cursor: pointer;
+    }
+
+    /* Responsive Website Design */
+    @media(max-width: 77.875em) and (min-width: 66.5625em) {
+      .card {
+        width: 35%;
+      }
+    }
+
+    @media(max-width: 66.5em) and (min-width: 53.75em) {
+      .card {
+        width: 40%;
+      }
+    }
+
+    @media(max-width: 53.6875em) and (min-width: 41.875em) {
+      .card {
+        width: 50%;
+      }
+    }
+
+    @media(max-width: 41.8125em) and (min-width: 37.5em) {
+      .card {
+        width: 60%;
+      }
+    }
+
+    @media(max-width: 37.4375em) {
+      .card {
+        width: 80%;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="card-img">
+      <img src="./assets/images/avatar-jessica.jpeg" alt="avatar-jessica">
+    </div> <!-- card-img End -->
+    <div class="card-title">
+      <h2>Jessica Randall</h2>
+      <p>London, United Kingdom</p>
+    </div> <!-- card-title End -->
+    <div class="card-description">
+      <p>"Front-end developer and avid reader."</p>
+    </div> <!-- card-description End -->
+
+    <div class="card-buttons">
+      <button class="btn" id="btn1">Github</button>
+      <button class="btn" id="btn1">Frontend Mentor</button>
+      <button class="btn" id="btn1"> LinkedIn</button>
+      <button class="btn" id="btn1">Twitter</button>
+      <button class="btn" id="btn1">Instagram</button>
+    </div> <!-- card-buttons End -->
+  </div> <!-- card End -->
+
+  <!-- Javascript code start -->
+  <script>
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(button => {
+
+      button.addEventListener('mouseover', function () {
+        this.classList.toggle('active');
+      });
+
+      button.addEventListener('click', function () {
+        this.classList.toggle('active');
+      });
+
+      button.addEventListener('mouseleave', function () {
+        this.classList.remove('active');
+      });
+    });
+
+  </script>
+</body>
+
+</html>
